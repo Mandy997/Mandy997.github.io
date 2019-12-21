@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="baidu-site-verification" content="CIGoojy6ws" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="博客、田春乐、技术、互联网、前端、.NET、OSC、生活、CMS">
+    <meta name="keyword"  content="博客">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Git使用（二） - 夜色撩人|爱笑科技|田春乐的个人博客
+        
+    </title>
+
+    <link rel="canonical" href="https://aixiao.group/2018/04/Git使用（二）/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/widget.css">
+    <link rel="stylesheet" href="/css/rocket.css">
+    <link rel="stylesheet" href="/css/signature.css">
+    <link rel="stylesheet" href="/css/toc.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body>
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+
+    header.intro-header{
+        
+          
+             background-image: url('/img/header_img/tag-bg.jpg')  
+         
+    }
+    
+    #signature{
+        background-image: url('/img/signature/tianchunle.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <!--文章-->
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tag/#Git" title="Git">Git</a>
+                            
+                        </div>
+                        <h1>Git使用（二）</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by ChunLe Tian on
+                            2018-04-23
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">夜色撩人</a>
+        </div>
+
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tag/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <blockquote>
+<p>远程仓库、添加远程仓库、从远程库克隆、创建与合并分支、解决冲突、分支管理策略<br>
+bug分支、feature分支、多人协作</p>
+</blockquote>
+<h2 id="远程仓库">远程仓库</h2>
+<p>可以使用gitHub ，也可以自己搭建git服务器<br>
+使用githun：创建SSH Key 创建了之后再“用户”主目录下会有一个.ssh的文件夹<br>
+如果没有，使用 Git Bash 创建SSH Key：<br>
+ssh-keygen -t rsa -C <a href="mailto:%22chuntain997@gmail.com" target="_blank" rel="noopener">&quot;chuntain997@gmail.com</a>&quot;  一路回车就行，没啥重要的无需设置密码<br>
+完成之后，在用户主目录中会有有一个 .ssh的文件夹，里面有id_rsa和id_rsa.pub两个文件，id_rsa是私钥，不能泄露 ，id_rsa是共钥，可以谁便说 反正没私钥也没啥用<br>
+然后就在gitHub 中添加这个公钥吧。GitHub只有知道了你的工钥才能知道这个文件是你自己推送的</p>
+<h2 id="添加远程仓库">添加远程仓库</h2>
+<p>要关联一个远程库，使用命令：git remote add origin(注释) git@server-name:path/repo-name.git<br>
+origin:远程库的名字就是origin，这是Git默认的叫法，也可以改成别的<br>
+关联远程库之后使用，命令：git push -u origin master  第一次推送master的所有的内容；   -u参数，不但会推送，还会关联master分支<br>
+以后，每次提交后，只要有需要，就可以使用命令：git push origin master 推送最新修改</p>
+<h2 id="从远程库克隆">从远程库克隆</h2>
+<p>1、获得远程库的地址 2、使用git clone 克隆一个本地库<br>
+命令:git clone   git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:Mandy997/Mandy997.github.io.git<br>
+Git不但支持ssh协议,还支持https等其他协议，默认使用git://使用ssh<br>
+使用http不但速度慢 而且每次推送都必须输入口令</p>
+<h2 id="创建与合并分支">创建与合并分支</h2>
+<p>每次提交，Git都把他们串成一条线，这条时间线就是一个分支，一开始有一个指针，就是主分支master,然后你想增加一个分支dev,在这条时间线上就增加了一个指针dev,它指向与master相同的提交，再把HEAD指向dev，就表示当前分支在dev上了<br>
+如果在dev的工作完成了，就可以把dev合并到master上，git就会把master指向dev当前的提交，就完成了合并<br>
+创建dev分支命令:git branch dev<br>
+切换分支： git checkout dev<br>
+创建+切换分支命令： git checkout -b dev(分支名字)<br>
+合并某分支到当前分支：git merge name<br>
+删除分支: git branch -d name<br>
+查看分支：git branch</p>
+<h2 id="解决冲突">解决冲突</h2>
+<p>当master和另一个分支dev都有新的提交的时候。git无法执行“快速合并”,只能试着把各自的修改合并起来，但这种合并就可能有冲突。<br>
+使用命令：git merge name（分支名） 进行合并分支<br>
+有时候会出现这两句<br>
+CONFLICT (content): Merge conflict in readme.txt<br>
+Automatic merge failed; fix conflicts and then commit the result.<br>
+就说明合并到分支冲突了，必须手动解决冲突后再提交。这时候我们就可以直接在ide中查看到冲突的内容<br>
+使用 git status 命令也可以告诉我们冲突的文件<br>
+Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;标记出不同分支的内容<br>
+修改之后，再次提交<br>
+使用带参数的git log 也可以看到分支合并的情况。。。<br>
+git log --graph --pretty=oneline --abbrev-commit</p>
+<h2 id="分支管理策略">分支管理策略</h2>
+<p>一般情况下，合并分支的时候，Git会用 Fast forward 模式，但在这种模式下，删除分支后，会丢掉分支信息<br>
+如果要强制禁用 Fast forwart 模式。Git 就会在 merge 时生成一个新的commit，这样，从分支历史上就可以看出分支信息了<br>
+准备合并分支的时候，注意使用 --no-ff参数，表示禁用 Fast forward，本次合并要创建一个新的commit，所以加上-m 参数，把commit的描述写进去<br>
+命令如下：git merge --no-ff -m “merge with no-ff” dev</p>
+<h3 id="分支策略">分支策略</h3>
+<p>在实际开发中，我们应该按照几个基本原则进行分支管理：<br>
+首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；<br>
+那在哪干活呢？干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；<br>
+你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了。</p>
+<h2 id="bug分支">Bug分支</h2>
+<p>当出现Bug的时候，你要尽快去修复Bug .但是你手头上的工作只进行了一半还没有提交<br>
+这时候就可以用到Git提供的一个’stash’功能，可以把当前的工作现场“储藏”起来，等以后恢复现场继续工作<br>
+储存工作现场命令： git stash<br>
+储藏完工作区 再用 git status 查看工作区，就是干净的。。这时候就可以放心的去创建分支修复bug<br>
+首先要确定在哪个分支修复bug,如果在master分支上修复，那就从master创建临时分支<br>
+修复完bug之后，继续切换到dev分支上干活，这时候使用 git status查看工作区状态还是干净的<br>
+使用命令：git stash list 查看刚才的工作现场<br>
+Git 把 stash 内容存放在了某个地方，但是要恢复一下，有两个办法：<br>
+使用命令：git stash apply 恢复，但是在恢复后，stash内容并不会删除，需要使用’git stash drop 删除’；<br>
+另一种方法就是用 git stash pop ,恢复的同时也可以把stash内容也删了<br>
+你也可以多次stash ， 恢复的时候，先用 git stash list查看，然后恢复到指定的stash,用命令：git stash apply stash@{0}</p>
+<h2 id="feature分支">feature分支</h2>
+<p>软件开发中，总是有不断地新功能要添加进来，添加一个新功能时，不会希望把主分支搞乱的<br>
+所以每添加一个新功能，最好新建一个 ‘Feature分支’ 在这个分支上开发，完成之后再合并，最后删除</p>
+<h2 id="多人协作">多人协作</h2>
+<p>查看远程库的信息： git remote<br>
+详细信息： git remote -v<br>
+向远程库推送：<br>
+master分支是主分支，因此要时刻与远程同步；<br>
+dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；<br>
+bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug;<br>
+feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。</p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2018/04/EntityFramework连接PostgreSQL数据库并添加迁移/" data-toggle="tooltip" data-placement="top" title="EntityFramework连接PostgreSQL数据库并添加迁移">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2018/04/Git使用（一）/" data-toggle="tooltip" data-placement="top" title="Git使用 (一)">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#远程仓库"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">远程仓库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#添加远程仓库"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">添加远程仓库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#从远程库克隆"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">从远程库克隆</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#创建与合并分支"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">创建与合并分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#解决冲突"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">解决冲突</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#分支管理策略"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">分支管理策略</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#分支策略"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">分支策略</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#bug分支"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">Bug分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#feature分支"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">feature分支</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#多人协作"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">多人协作</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tag/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tag/#Git" title="Git" rel="2">Git</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://aixiao.group" target="_blank">Aai Xiao</a></li>
+                    
+                        <li><a href="https://my.oschina.net/u/3430978/blog" target="_blank">oscchina</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/tian-chun-le-6">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/3430978">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-copyright fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Mandy997">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+               
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; ChunLe Tian 2019 
+                    <br>
+                   Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://aixiao.group/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+<!-- jquery.categorycloud.js -->
+<script>
+    // only load categorycloud.js in tag.html
+    if($('#category_cloud').length !== 0){
+        async("https://aixiao.group/js/jquery.categorycloud.js",function(){
+            $.fn.categorycloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#category_cloud a').categorycloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://aixiao.group//img/icon_wechat.png" alt="" width="0" height="0"/>
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

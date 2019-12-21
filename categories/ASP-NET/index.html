@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="baidu-site-verification" content="CIGoojy6ws" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="博客、田春乐、技术、互联网、前端、.NET、OSC、生活、CMS">
+    <meta name="keyword"  content="博客">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          夜色撩人|爱笑科技|田春乐的个人博客
+        
+    </title>
+
+    <link rel="canonical" href="https://aixiao.group/categories/ASP-NET/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/widget.css">
+    <link rel="stylesheet" href="/css/rocket.css">
+    <link rel="stylesheet" href="/css/signature.css">
+    <link rel="stylesheet" href="/css/toc.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body>
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+
+    header.intro-header{
+        
+            background-image: url('/img/header_img/tag-bg.jpg')  
+          /*archive*/
+      
+    }
+    
+    #signature{
+        background-image: url('/img/signature/tianchunle.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="site-heading">
+                        <h1>Categories</h1>
+                        <span class="subheading" style="font-weight:500">就会这么点东西，你还有什么借口不去努力</span>
+                    </div>
+                    <!--archive-->
+                    
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">夜色撩人</a>
+        </div>
+
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tag/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!-- 分类云 -->
+            <div id='category_cloud' class="categories">
+                
+                    <a href="#问题总结" title="问题总结" rel="1">问题总结</a>
+                
+                    <a href="#ASP.NET" title="ASP.NET" rel="1">ASP.NET</a>
+                
+                    <a href="#代码托管" title="代码托管" rel="2">代码托管</a>
+                
+                    <a href="#编辑器" title="编辑器" rel="1">编辑器</a>
+                
+                    <a href="#前端" title="前端" rel="3">前端</a>
+                
+                    <a href="#CMS" title="CMS" rel="1">CMS</a>
+                
+                    <a href="#数据库" title="数据库" rel="1">数据库</a>
+                
+                    <a href="#工具" title="工具" rel="1">工具</a>
+                
+                    <a href="#文档" title="文档" rel="1">文档</a>
+                
+                    <a href="#系统" title="系统" rel="1">系统</a>
+                
+                    <a href="#教程" title="教程" rel="1">教程</a>
+                
+            </div>
+
+            <!-- 分类列表 -->
+
+            
+            <div class="one-category-list">
+                <span class="fa fa-folder-open listing-seperator" id="问题总结">
+                    <span class="category-text">问题总结</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2018/03/使用hexo搭建个人博客遇到的问题及解决方法/">
+                        <h2 class="post-title">
+                            使用hexo搭建个人博客遇到的问题及解决方法
+                        </h2>
+                        
+                    </a>
+                
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-category-list">
+                <span class="fa fa-folder-open listing-seperator" id="ASP.NET">
+                    <span class="category-text">ASP.NET</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2018/04/EntityFramework连接PostgreSQL数据库并添加迁移/">
+                        <h2 class="post-title">
+                            EntityFramework连接PostgreSQL数据库并添加迁移
+                        </h2>
+                        
+                    </a>
+                
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-category-list">
+                <span class="fa fa-folder-open listing-seperator" id="代码托管">
+                    <span class="category-text">代码托管</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2018/04/Git使用（一）/">
+                        <h2 class="post-title">
+                            Git使用 (一)
+                        </h2>
+                        
+                    </a>
+                
+                </div>
+                <hr>
+                
+                 <div class="post-preview">
+                     <a href="/2018/04/Git使用（二）/">
+                        <h2 class="post-title">
+                            Git使用（二）
+                        </h2>
+                        
+                    </a>
+                
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-category-list">
+                <span class="fa fa-folder-open listing-seperator" id="编辑器">
+                    <span class="category-text">编辑器</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2018/06/Markdown基本语法/">
+                        <h2 class="post-title">
+                            Markdown基本语法
+                        </h2>
+                        
+                    </a>
+                
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-category-list">
+                <span class="fa fa-folder-open listing-seperator" id="前端">
+                    <span class="category-text">前端</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2018/04/在前端写逻辑会不会被打。。。/">
+                        <h2 class="post-title">
+                            在前端写逻辑会不会被打
+                        </h2>
+                        
+                    </a>
+                
+                </div>
+                <hr>
+                
+                 <div class="post-preview">
+                     <a href="/2019/03/css-盒模型/">
+                        <h2 class="post-title">
+                            css 盒模型
+                        </h2>
+                        
+                    </a>
+                
+                </div>
+                <hr>
+                
+                 <div class="post-preview">
+                     <a href="/2018/07/BOM的常见内置方法和内置对象/">
+                        <h2 class="post-title">
+                            BOM的常见内置方法和内置对象
+                        </h2>
+                        
+                    </a>
+                
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-category-list">
+                <span class="fa fa-folder-open listing-seperator" id="CMS">
+                    <span class="category-text">CMS</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2018/05/Drupal8安装说明/">
+                        <h2 class="post-title">
+                            Drupal8安装说明
+                        </h2>
+                        
+                    </a>
+                
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-category-list">
+                <span class="fa fa-folder-open listing-seperator" id="数据库">
+                    <span class="category-text">数据库</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2018/06/postgre数据库的备份与恢复/">
+                        <h2 class="post-title">
+                            postgreSQL数据库的备份与恢复
+                        </h2>
+                        
+                    </a>
+                
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-category-list">
+                <span class="fa fa-folder-open listing-seperator" id="工具">
+                    <span class="category-text">工具</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2018/07/AxureV8-1-0-3372授权码/">
+                        <h2 class="post-title">
+                            AxureV8.1.0.3372授权码
+                        </h2>
+                        
+                    </a>
+                
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-category-list">
+                <span class="fa fa-folder-open listing-seperator" id="文档">
+                    <span class="category-text">文档</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2019/01/接口文档模板/">
+                        <h2 class="post-title">
+                            接口文档模板
+                        </h2>
+                        
+                    </a>
+                
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-category-list">
+                <span class="fa fa-folder-open listing-seperator" id="系统">
+                    <span class="category-text">系统</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2019/03/Linux-常用命令/">
+                        <h2 class="post-title">
+                            Linux 的体系结构
+                        </h2>
+                        
+                    </a>
+                
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-category-list">
+                <span class="fa fa-folder-open listing-seperator" id="教程">
+                    <span class="category-text">教程</span>
+                </span>
+                
+                 <div class="post-preview">
+                     <a href="/2017/04/hexo-theme-beantech/">
+                        <h2 class="post-title">
+                            [ooo]  吉娃娃
+                        </h2>
+                        
+                            <h3 class="post-subtitle">
+                                This is ooo  Demo.
+                            </h3>
+                        
+                    </a>
+                
+                </div>
+                <hr>
+                
+            </div>
+            
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/tian-chun-le-6">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/3430978">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-copyright fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Mandy997">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+               
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; ChunLe Tian 2019 
+                    <br>
+                   Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://aixiao.group/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+<!-- jquery.categorycloud.js -->
+<script>
+    // only load categorycloud.js in tag.html
+    if($('#category_cloud').length !== 0){
+        async("https://aixiao.group/js/jquery.categorycloud.js",function(){
+            $.fn.categorycloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#category_cloud a').categorycloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://aixiao.group//img/icon_wechat.png" alt="" width="0" height="0"/>
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

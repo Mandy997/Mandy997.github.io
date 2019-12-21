@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="baidu-site-verification" content="CIGoojy6ws" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="博客、田春乐、技术、互联网、前端、.NET、OSC、生活、CMS">
+    <meta name="keyword"  content="博客">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          接口文档模板 - 夜色撩人|爱笑科技|田春乐的个人博客
+        
+    </title>
+
+    <link rel="canonical" href="https://aixiao.group/2019/01/接口文档模板/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/widget.css">
+    <link rel="stylesheet" href="/css/rocket.css">
+    <link rel="stylesheet" href="/css/signature.css">
+    <link rel="stylesheet" href="/css/toc.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body>
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+
+    header.intro-header{
+        
+          
+             background-image: url('/img/header_img/tag-bg.jpg')  
+         
+    }
+    
+    #signature{
+        background-image: url('/img/signature/tianchunle.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <!--文章-->
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tag/#mvc" title="mvc">mvc</a>
+                            
+                        </div>
+                        <h1>接口文档模板</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by ChunLe Tian on
+                            2019-01-25
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">夜色撩人</a>
+        </div>
+
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tag/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <blockquote>
+<p>Markdown 版本接口文档模板 | 参数名称 | 参数类型 | 参数说明     | 示例值       |</p>
+</blockquote>
+<h1>响应Model：</h1>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>添加员工成功</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>返回数据</td>
+<td>{}</td>
+</tr>
+</tbody>
+</table>
+<h1>员工管理</h1>
+<h2 id="员工添加">员工添加</h2>
+<p>请求地址:/backend/employee/addEmployee</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>是</td>
+<td>员工姓名</td>
+<td>张山</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>是</td>
+<td>员工手机号</td>
+<td>17888878988</td>
+</tr>
+<tr>
+<td>station</td>
+<td>int</td>
+<td>是</td>
+<td>所属配送站，配送站id</td>
+<td>1</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>否</td>
+<td>家庭住址</td>
+<td>山东省济南市历下区黄金时代小区2号楼2单元</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>添加员工成功</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>返回数据</td>
+<td>{}</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="员工删除">员工删除</h2>
+<p>请求地址:/backend/employee/deleteEmployee</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>是</td>
+<td>员工ID</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>删除员工成功</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>返回数据</td>
+<td>{}</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="员工详情">员工详情</h2>
+<p>请求地址:/backend/employee/getEmployeeById</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>是</td>
+<td>员工ID</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>员工详情</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>返回数据</td>
+<td>----------</td>
+</tr>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>员工ID</td>
+<td>1</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>员工姓名</td>
+<td>张山</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>员工手机号</td>
+<td>17888878988</td>
+</tr>
+<tr>
+<td>station</td>
+<td>String</td>
+<td>所属配送站</td>
+<td>高新区舜泰广场站</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>家庭住址</td>
+<td>山东省济南市历下区黄金时代小区2号楼2单元</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="员工配送列表">员工配送列表</h2>
+<p>请求地址:/backend/employee/getEmployeeDispatchingList</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>是</td>
+<td>员工ID</td>
+<td>1</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>否</td>
+<td>第几页</td>
+<td>1</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>int</td>
+<td>否</td>
+<td>一页有几条数据</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>员工配送列表</td>
+</tr>
+<tr>
+<td>data</td>
+<td>ObjectList</td>
+<td>返回数据集合</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>配送单ID</td>
+<td>1</td>
+</tr>
+<tr>
+<td>snumber</td>
+<td>String</td>
+<td>配送单编号</td>
+<td>201801251122</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>家庭住址</td>
+<td>山东省济南市历下区黄金时代小区2号楼2单元</td>
+</tr>
+<tr>
+<td>goods</td>
+<td>String</td>
+<td>商品名</td>
+<td>佳宝小酸奶</td>
+</tr>
+<tr>
+<td>number</td>
+<td>int</td>
+<td>数量</td>
+<td>1</td>
+</tr>
+<tr>
+<td>time</td>
+<td>String</td>
+<td>配送时间</td>
+<td>2019-01-23 11：11：11</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>状态</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="员工列表">员工列表</h2>
+<p>请求地址:/backend/employee/getEmployeeList</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>否</td>
+<td>第几页</td>
+<td>1</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>int</td>
+<td>否</td>
+<td>一页有几条数据</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>员工列表</td>
+</tr>
+<tr>
+<td>data</td>
+<td>ObjectList</td>
+<td>返回数据集合</td>
+<td>----------</td>
+</tr>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>员工ID</td>
+<td>1</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>员工姓名</td>
+<td>张山</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>员工手机号</td>
+<td>17888878988</td>
+</tr>
+<tr>
+<td>station</td>
+<td>String</td>
+<td>所属配送站</td>
+<td>高新区舜泰广场站</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>家庭住址</td>
+<td>山东省济南市历下区黄金时代小区2号楼2单元</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>奶站管理</h1>
+<h2 id="奶站添加">奶站添加</h2>
+<p>请求地址:/backend/milkStation/addMilkStation</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>是</td>
+<td>奶站名称</td>
+<td>高新舜泰站</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>否</td>
+<td>奶站位置</td>
+<td>山东省济南市高新区舜泰广场一号楼</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>是</td>
+<td>联系电话</td>
+<td>17888878988</td>
+</tr>
+<tr>
+<td>coord</td>
+<td>String</td>
+<td>否</td>
+<td>配送范围坐标数组</td>
+<td>[{log:200.00,log:223:22},{log:200.00,log:223:22}]</td>
+</tr>
+<tr>
+<td>eid</td>
+<td>int</td>
+<td>是</td>
+<td>站长id</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>添加员工成功</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>返回数据</td>
+<td>{}</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="奶站删除">奶站删除</h2>
+<p>请求地址:/backend/milkStation/deleteMilkStation</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>是</td>
+<td>奶站ID</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>删除奶站成功</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>返回数据</td>
+<td>{}</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="奶站详情">奶站详情</h2>
+<p>请求地址:/backend/milkStation/getMilkStationById</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>是</td>
+<td>奶站ID</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>奶站详情</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>返回数据</td>
+<td>----------</td>
+</tr>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>奶站ID</td>
+<td>1</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>奶站名称</td>
+<td>高新舜泰站</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>奶站联系电话</td>
+<td>17888878988</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>奶站位置</td>
+<td>山东省济南市高新区舜泰广场一号楼</td>
+</tr>
+<tr>
+<td>coord</td>
+<td>String</td>
+<td>配送范围坐标数组</td>
+<td>[{log:200.00,log:223:22},{log:200.00,log:223:22}]</td>
+</tr>
+<tr>
+<td>ename</td>
+<td>String</td>
+<td>站长姓名</td>
+<td>张三</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="奶站列表">奶站列表</h2>
+<p>请求地址:/backend/employee/getMilkStationList</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>否</td>
+<td>第几页</td>
+<td>1</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>int</td>
+<td>否</td>
+<td>一页有几条数据</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>奶站列表</td>
+</tr>
+<tr>
+<td>data</td>
+<td>ObjectList</td>
+<td>返回数据集合</td>
+<td>----------</td>
+</tr>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>奶站ID</td>
+<td>1</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>奶站名称</td>
+<td>高新舜泰站</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>奶站联系电话</td>
+<td>17888878988</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>奶站位置</td>
+<td>山东省济南市高新区舜泰广场一号楼</td>
+</tr>
+<tr>
+<td>ename</td>
+<td>String</td>
+<td>站长姓名</td>
+<td>张三</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>客户管理</h1>
+<h2 id="客户详情">客户详情</h2>
+<p>请求地址:/backend/clientele/getClienteleById</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>是</td>
+<td>客户ID</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>客户详情</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>返回数据</td>
+<td>----------</td>
+</tr>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>客户ID</td>
+<td>1</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>客户姓名</td>
+<td>李四</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>客户联系电话</td>
+<td>17888878988</td>
+</tr>
+<tr>
+<td>station</td>
+<td>String</td>
+<td>所属配送站</td>
+<td>高新区舜泰广场站</td>
+</tr>
+<tr>
+<td>ename</td>
+<td>String</td>
+<td>配送员姓名</td>
+<td>李四</td>
+</tr>
+<tr>
+<td>goods</td>
+<td>String</td>
+<td>商品名</td>
+<td>佳宝小酸奶</td>
+</tr>
+<tr>
+<td>number</td>
+<td>int</td>
+<td>数量</td>
+<td>1</td>
+</tr>
+<tr>
+<td>start</td>
+<td>String</td>
+<td>配送开始时间</td>
+<td>2019-01-23 11：11：11</td>
+</tr>
+<tr>
+<td>end</td>
+<td>String</td>
+<td>配送结束时间</td>
+<td>2019-02-23 11：11：11</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="客户列表">客户列表</h2>
+<p>请求地址:/backend/clientele/getClienteleList</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>否</td>
+<td>第几页</td>
+<td>1</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>int</td>
+<td>否</td>
+<td>一页有几条数据</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>奶站列表</td>
+</tr>
+<tr>
+<td>data</td>
+<td>ObjectList</td>
+<td>返回数据集合</td>
+<td>----------</td>
+</tr>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>客户ID</td>
+<td>1</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>客户姓名</td>
+<td>李四</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>客户联系电话</td>
+<td>17888878988</td>
+</tr>
+<tr>
+<td>station</td>
+<td>String</td>
+<td>所属配送站</td>
+<td>高新区舜泰广场站</td>
+</tr>
+<tr>
+<td>diliveryman</td>
+<td>String</td>
+<td>配送员姓名</td>
+<td>李四</td>
+</tr>
+<tr>
+<td>goods</td>
+<td>String</td>
+<td>商品名</td>
+<td>佳宝小酸奶</td>
+</tr>
+<tr>
+<td>number</td>
+<td>int</td>
+<td>数量</td>
+<td>1</td>
+</tr>
+<tr>
+<td>start</td>
+<td>String</td>
+<td>配送开始时间</td>
+<td>2019-01-23 11：11：11</td>
+</tr>
+<tr>
+<td>end</td>
+<td>String</td>
+<td>配送结束时间</td>
+<td>2019-02-23 11：11：11</td>
+</tr>
+</tbody>
+</table>
+<h1>订单管理</h1>
+<h2 id="订单详情">订单详情</h2>
+<p>请求地址:/backend/order/getOrderById</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>是</td>
+<td>订单ID</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>客户详情</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>返回数据</td>
+<td>----------</td>
+</tr>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>订单ID</td>
+<td>1</td>
+</tr>
+<tr>
+<td>snumber</td>
+<td>String</td>
+<td>订单编号</td>
+<td>201801251122</td>
+</tr>
+<tr>
+<td>cname</td>
+<td>String</td>
+<td>客户姓名</td>
+<td>王二</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>送货地址</td>
+<td>山东省济南市高新区黄金时代小区2区12号楼2单元1201室</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>客户联系电话</td>
+<td>17888878988</td>
+</tr>
+<tr>
+<td>station</td>
+<td>String</td>
+<td>所属配送站</td>
+<td>高新区舜泰广场站</td>
+</tr>
+<tr>
+<td>diliveryman</td>
+<td>String</td>
+<td>配送员姓名</td>
+<td>李四</td>
+</tr>
+<tr>
+<td>goods</td>
+<td>String</td>
+<td>商品名</td>
+<td>佳宝小酸奶</td>
+</tr>
+<tr>
+<td>number</td>
+<td>int</td>
+<td>数量</td>
+<td>1</td>
+</tr>
+<tr>
+<td>start</td>
+<td>String</td>
+<td>配送开始日期</td>
+<td>2019-01-23 11：11：11</td>
+</tr>
+<tr>
+<td>end</td>
+<td>String</td>
+<td>配送结束日期</td>
+<td>2019-02-23 11：11：11</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="订单审核">订单审核</h2>
+<p>请求地址:/backend/order/auditOrder</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>是</td>
+<td>订单ID</td>
+<td>1</td>
+</tr>
+<tr>
+<td>audit</td>
+<td>int</td>
+<td>是</td>
+<td>审核结果  1：接收 2：驳回</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>审核完成</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>返回数据</td>
+<td>----------</td>
+</tr>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>订单ID</td>
+<td>1</td>
+</tr>
+<tr>
+<td>snumber</td>
+<td>String</td>
+<td>订单编号</td>
+<td>201801251122</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="订单列表">订单列表</h2>
+<p>请求地址:/backend/order/getOrderList</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>否</td>
+<td>第几页</td>
+<td>1</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>int</td>
+<td>否</td>
+<td>一页有几条数据</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>奶站列表</td>
+</tr>
+<tr>
+<td>data</td>
+<td>ObjectList</td>
+<td>返回数据集合</td>
+<td>----------</td>
+</tr>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>订单ID</td>
+<td>1</td>
+</tr>
+<tr>
+<td>snumber</td>
+<td>String</td>
+<td>订单编号</td>
+<td>201801251122</td>
+</tr>
+<tr>
+<td>cname</td>
+<td>String</td>
+<td>客户姓名</td>
+<td>王二</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>送货地址</td>
+<td>山东省济南市高新区黄金时代小区2区12号楼2单元1201室</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>客户联系电话</td>
+<td>17888878988</td>
+</tr>
+<tr>
+<td>station</td>
+<td>String</td>
+<td>所属配送站</td>
+<td>高新区舜泰广场站</td>
+</tr>
+<tr>
+<td>diliveryman</td>
+<td>String</td>
+<td>配送员姓名</td>
+<td>李四</td>
+</tr>
+<tr>
+<td>goods</td>
+<td>String</td>
+<td>商品名</td>
+<td>佳宝小酸奶</td>
+</tr>
+<tr>
+<td>number</td>
+<td>int</td>
+<td>数量</td>
+<td>1</td>
+</tr>
+<tr>
+<td>start</td>
+<td>String</td>
+<td>配送开始日期</td>
+<td>2019-01-23</td>
+</tr>
+<tr>
+<td>end</td>
+<td>String</td>
+<td>配送结束日期</td>
+<td>2019-02-23</td>
+</tr>
+</tbody>
+</table>
+<h1>配送单管理</h1>
+<h2 id="配送单详情">配送单详情</h2>
+<p>请求地址:/backend/dispatching/getDispatchingById</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>是</td>
+<td>订单ID</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>配送单详情</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>返回数据</td>
+<td>----------</td>
+</tr>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>配送单ID</td>
+<td>1</td>
+</tr>
+<tr>
+<td>snumber</td>
+<td>String</td>
+<td>订单编号</td>
+<td>201801251122</td>
+</tr>
+<tr>
+<td>cname</td>
+<td>String</td>
+<td>客户姓名</td>
+<td>王二</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>送货地址</td>
+<td>山东省济南市高新区黄金时代小区2区12号楼2单元1201室</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>客户联系电话</td>
+<td>17888878988</td>
+</tr>
+<tr>
+<td>station</td>
+<td>String</td>
+<td>所属配送站</td>
+<td>高新区舜泰广场站</td>
+</tr>
+<tr>
+<td>diliveryman</td>
+<td>String</td>
+<td>配送员姓名</td>
+<td>李四</td>
+</tr>
+<tr>
+<td>goods</td>
+<td>String</td>
+<td>商品名</td>
+<td>佳宝小酸奶</td>
+</tr>
+<tr>
+<td>number</td>
+<td>int</td>
+<td>数量</td>
+<td>1</td>
+</tr>
+<tr>
+<td>time</td>
+<td>String</td>
+<td>配送时间</td>
+<td>2019-01-23 11：11：11</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>配送状态 1：配送成功 2：奶箱锁</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="配送单列表">配送单列表</h2>
+<p>请求地址:/backend/dispatching/getDispatchingList</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>选项</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>否</td>
+<td>第几页</td>
+<td>1</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>int</td>
+<td>否</td>
+<td>一页有几条数据</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数说明</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>是否成功</td>
+<td>true</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>处理结果信息</td>
+<td>配送单列表</td>
+</tr>
+<tr>
+<td>data</td>
+<td>ObjectList</td>
+<td>返回数据集合</td>
+<td>----------</td>
+</tr>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>配送单ID</td>
+<td>1</td>
+</tr>
+<tr>
+<td>snumber</td>
+<td>String</td>
+<td>订单编号</td>
+<td>201801251122</td>
+</tr>
+<tr>
+<td>cname</td>
+<td>String</td>
+<td>客户姓名</td>
+<td>王二</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>送货地址</td>
+<td>山东省济南市高新区黄金时代小区2区12号楼2单元1201室</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>客户联系电话</td>
+<td>17888878988</td>
+</tr>
+<tr>
+<td>station</td>
+<td>String</td>
+<td>所属配送站</td>
+<td>高新区舜泰广场站</td>
+</tr>
+<tr>
+<td>diliveryman</td>
+<td>String</td>
+<td>配送员姓名</td>
+<td>李四</td>
+</tr>
+<tr>
+<td>goods</td>
+<td>String</td>
+<td>商品名</td>
+<td>佳宝小酸奶</td>
+</tr>
+<tr>
+<td>number</td>
+<td>int</td>
+<td>数量</td>
+<td>1</td>
+</tr>
+<tr>
+<td>time</td>
+<td>String</td>
+<td>配送时间</td>
+<td>2019-01-23 11：11：11</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>配送状态 1：配送成功 2：奶箱锁</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2019/03/Linux-常用命令/" data-toggle="tooltip" data-placement="top" title="Linux 的体系结构">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2018/07/AxureV8-1-0-3372授权码/" data-toggle="tooltip" data-placement="top" title="AxureV8.1.0.3372授权码">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">响应Model：</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">员工管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#员工添加"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">员工添加</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#员工删除"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">员工删除</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#员工详情"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">员工详情</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#员工配送列表"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">员工配送列表</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#员工列表"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">员工列表</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">奶站管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#奶站添加"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">奶站添加</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#奶站删除"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">奶站删除</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#奶站详情"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">奶站详情</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#奶站列表"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">奶站列表</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">客户管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#客户详情"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">客户详情</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#客户列表"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">客户列表</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">订单管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#订单详情"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">订单详情</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#订单审核"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">订单审核</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#订单列表"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">订单列表</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">配送单管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配送单详情"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">配送单详情</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#配送单列表"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">配送单列表</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tag/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tag/#mvc" title="mvc" rel="1">mvc</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://aixiao.group" target="_blank">Aai Xiao</a></li>
+                    
+                        <li><a href="https://my.oschina.net/u/3430978/blog" target="_blank">oscchina</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/tian-chun-le-6">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/3430978">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-copyright fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Mandy997">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+               
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; ChunLe Tian 2019 
+                    <br>
+                   Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://aixiao.group/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+<!-- jquery.categorycloud.js -->
+<script>
+    // only load categorycloud.js in tag.html
+    if($('#category_cloud').length !== 0){
+        async("https://aixiao.group/js/jquery.categorycloud.js",function(){
+            $.fn.categorycloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#category_cloud a').categorycloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://aixiao.group//img/icon_wechat.png" alt="" width="0" height="0"/>
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="baidu-site-verification" content="CIGoojy6ws" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="博客、田春乐、技术、互联网、前端、.NET、OSC、生活、CMS">
+    <meta name="keyword"  content="博客">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          BOM的常见内置方法和内置对象 - 夜色撩人|爱笑科技|田春乐的个人博客
+        
+    </title>
+
+    <link rel="canonical" href="https://aixiao.group/2018/07/BOM的常见内置方法和内置对象/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/widget.css">
+    <link rel="stylesheet" href="/css/rocket.css">
+    <link rel="stylesheet" href="/css/signature.css">
+    <link rel="stylesheet" href="/css/toc.css">
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body>
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+
+    header.intro-header{
+        
+          
+             background-image: url('/img/header_img/tag-bg.jpg')  
+         
+    }
+    
+    #signature{
+        background-image: url('/img/signature/tianchunle.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <!--文章-->
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tag/#BOM" title="BOM">BOM</a>
+                            
+                              <a class="tag" href="/tag/#javascript" title="javascript">javascript</a>
+                            
+                        </div>
+                        <h1>BOM的常见内置方法和内置对象</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by ChunLe Tian on
+                            2018-07-04
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">夜色撩人</a>
+        </div>
+
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tag/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1>JavaScript的组成</h1>
+<p>javascript的组成分为三部分</p>
+<ul>
+<li>ECMAScript:JavaScript 的语法标准。包括变量、表达式、运算符、函数、if语句、for语句等等。</li>
+<li>DOM: Document Object Model,文档对象模型，操作网页上的元素的API。比如让盒子移动、变色、轮播图等</li>
+<li>BOM：Browser Object Model,浏览器对象模型，操作浏览器部分功能的API。比如让浏览器自动滚动。</li>
+</ul>
+<h1>什么是BOM</h1>
+<p>BOM 的结构图<br>
+<img src="BOM.png" alt="BOM结构图"><br>
+从上图可以看出：</p>
+<ul>
+<li>windows对象是BOM的顶层核心对象，所有的对象都是通过它延申出来的，也可以称为windows的子对象。</li>
+<li>DOM是BOM的一部分</li>
+</ul>
+<h2 id="window对象">window对象</h2>
+<ul>
+<li>window对象是JavaScript中的顶级对象。</li>
+<li>全局变量、自定义函数也是windowd对象的属性和方法</li>
+<li>window对象下的属性和方法调用时可以省略window.</li>
+</ul>
+<h1>BOM常见的内置方法和对象</h1>
+<h2 id="弹出系统对话框">弹出系统对话框</h2>
+<p>比如说，alert(1) 是 window.alert（1）的缩写，因为它是window的子方法<br>
+系统对话框有三种：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert(); <span class="comment">//警告框，不同浏览器下的外观是不一样的</span></span><br><span class="line">confirm(); <span class="comment">//确认框，兼容不好</span></span><br><span class="line">prompt();   <span class="comment">//提示框，不推荐使用</span></span><br></pre></td></tr></table></figure>
+<h2 id="打开窗口-关闭窗口">打开窗口，关闭窗口</h2>
+<p>1、打开窗口</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.open(url,target,param);</span><br></pre></td></tr></table></figure>
+<p>参数解释:</p>
+<ul>
+<li>url:要打开的地址</li>
+<li>target：新窗口的位置,可以是：_blank、_self(当前窗口)，_parent(父框架).</li>
+<li>param:新窗口的一些设置</li>
+<li>返回值：新窗口的句柄</li>
+</ul>
+<p><strong>param</strong>这个参数，可以填很多的参数（），比如</p>
+<ul>
+<li>name：新窗口的名称，可以为空</li>
+<li>featurse：属性控制字符串，在此控制窗口的各种属性，属性之间以逗号隔开。</li>
+<li>fullscreen= { yes/no/1/0 } 是否全屏，默认no</li>
+<li>channelmode= { yes/no/1/0 } 是否显示频道栏，默认no</li>
+<li>toolbar= { yes/no/1/0 } 是否显示工具条，默认no</li>
+<li>location= { yes/no/1/0 } 是否显示地址栏，默认no。（有的浏览器不一定支持）</li>
+<li>directories = { yes/no/1/0 } 是否显示转向按钮，默认no</li>
+<li>status= { yes/no/1/0 } 是否显示窗口状态条，默认no</li>
+<li>menubar= { yes/no/1/0 } 是否显示菜单，默认no</li>
+<li>scrollbars= { yes/no/1/0 } 是否显示滚动条，默认yes</li>
+<li>resizable= { yes/no/1/0 } 是否窗口可调整大小，默认no</li>
+<li>width=number 窗口宽度（像素单位）</li>
+<li>height=number 窗口高度（像素单位）</li>
+<li>top=number 窗口离屏幕顶部距离（像素单位）</li>
+<li>left=number 窗口离屏幕左边距离（像素单位）</li>
+</ul>
+<p>各个参数之间用逗号隔开就行，但我们最好是把它们统一放到json里。</p>
+<p>2、 关闭窗口： window.close();<br>
+代码例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>点击我打开一个新的页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>点击我关闭本页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//新窗口 = window.open(地址,是否开新窗口,新窗口的各种参数);</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> a1 = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"a"</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> a2 = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"a"</span>)[<span class="number">1</span>];</span></span><br><span class="line"><span class="javascript">    a1.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript"><span class="comment">//举例1： window.open("http://www.jd.com","_blank");</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> json = &#123;</span></span><br><span class="line"><span class="javascript">            <span class="string">"name"</span>: <span class="string">"helloworld"</span>,</span></span><br><span class="line"><span class="javascript">            <span class="string">"fullscreen"</span>: <span class="string">"no"</span>,</span></span><br><span class="line"><span class="javascript">            <span class="string">"location"</span>: <span class="string">"no"</span>,</span></span><br><span class="line"><span class="javascript">            <span class="string">"width"</span>: <span class="string">"100px"</span>,</span></span><br><span class="line"><span class="javascript">            <span class="string">"height"</span>: <span class="string">"100px"</span>,</span></span><br><span class="line"><span class="javascript">            <span class="string">"top"</span>: <span class="string">"100px"</span>,</span></span><br><span class="line"><span class="javascript">            <span class="string">"left"</span>: <span class="string">"100px"</span></span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.open(<span class="string">"http://www.baidu.com"</span>, <span class="string">"_blank"</span>, json); <span class="comment">//举例2</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//关闭本页面</span></span></span><br><span class="line"><span class="javascript">    a2.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.close();</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>3、新窗口相关</p>
+<ul>
+<li>新窗口.moveTo(5,5);</li>
+<li>新窗口.moveBy();</li>
+<li>新窗口.resizeTo();</li>
+<li>window.resizeBy();   不大懂</li>
+</ul>
+<p>代码举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newWin=<span class="built_in">window</span>.open(<span class="string">'http://baidu.com'</span>,<span class="string">'_blank'</span>,json);</span><br><span class="line">newWin.moveTo(<span class="number">500</span>,<span class="number">500</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="localtion-对象">localtion 对象</h2>
+<p>window.location 可以简写为location。location相当于浏览器的地址栏，可以将url解析成独立的片段。<br>
+<strong>location对象的属性</strong></p>
+<ul>
+<li>href:跳转</li>
+<li>hash:返回url中#后面的内容，包含#</li>
+<li>host:主机名</li>
+<li>pathname url中的路径部分</li>
+<li>protocol 协议一般是http,https</li>
+<li>search 查询字符串</li>
+</ul>
+<p><strong>location.href 属性举例</strong><br>
+点击盒子时，进行跳转</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>smyhvae<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"div"</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    div.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        location.href = <span class="string">"http://www.baidu.com"</span>;   <span class="comment">//点击div时,跳转到指定链接</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//window.open("http://www.baidu.com","_blank");  //方式二</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>location对象的方法:</p>
+<ul>
+<li>location.assign():改变浏览器地址栏的地址，并记录到历史中</li>
+<li>设置location.href就会调用assign(),一般使用location.href 进行页面跳转</li>
+<li>location.replace:替换浏览器地址栏的地址，不会记录到历史中</li>
+<li>location.reload()：重新加载，刷新呗</li>
+</ul>
+<h2 id="navigator对象">navigator对象</h2>
+<p>window.navigator 的一些属性可以获取客户端的一些信息</p>
+<ul>
+<li>userAgent:系统，浏览器</li>
+<li>platform:浏览器支持的系统，win/mac/linux</li>
+</ul>
+<p>举例:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(navigator.userAgent);</span><br><span class="line"><span class="built_in">console</span>.log(navigator.platform);</span><br></pre></td></tr></table></figure>
+<h2 id="history">history</h2>
+<p>1、历史纪录管理<br>
+2、后退</p>
+<ul>
+<li>history.back();</li>
+<li>history.go(-1); //0是刷新</li>
+</ul>
+<p>3、前进</p>
+<ul>
+<li>history.forward();</li>
+<li>history.go(1)</li>
+</ul>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2018/07/AxureV8-1-0-3372授权码/" data-toggle="tooltip" data-placement="top" title="AxureV8.1.0.3372授权码">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2018/06/Markdown高级语法/" data-toggle="tooltip" data-placement="top" title="Markdown高级语法">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">JavaScript的组成</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">什么是BOM</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#window对象"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">window对象</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">BOM常见的内置方法和对象</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#弹出系统对话框"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">弹出系统对话框</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#打开窗口-关闭窗口"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">打开窗口，关闭窗口</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#localtion-对象"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">localtion 对象</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#navigator对象"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">navigator对象</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#history"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">history</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tag/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tag/#BOM" title="BOM" rel="1">BOM</a>
+                        
+                          <a class="tag" href="/tag/#javascript" title="javascript" rel="1">javascript</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://aixiao.group" target="_blank">Aai Xiao</a></li>
+                    
+                        <li><a href="https://my.oschina.net/u/3430978/blog" target="_blank">oscchina</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/tian-chun-le-6">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/3430978">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-copyright fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/Mandy997">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+               
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; ChunLe Tian 2019 
+                    <br>
+                   Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://aixiao.group/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+<!-- jquery.categorycloud.js -->
+<script>
+    // only load categorycloud.js in tag.html
+    if($('#category_cloud').length !== 0){
+        async("https://aixiao.group/js/jquery.categorycloud.js",function(){
+            $.fn.categorycloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#category_cloud a').categorycloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://aixiao.group//img/icon_wechat.png" alt="" width="0" height="0"/>
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
